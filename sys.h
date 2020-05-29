@@ -91,7 +91,7 @@
 
 
 #elif defined (__AVR_ATmega_Mini__) || defined(ARDUINO_AVR_LARDU_328E)
-	// For ATmega328/168/88 (P, PB) and ATmega8 parts
+	// For ATmega8/88/168/328 (P, PB) parts
 	// Same deal as before/ Remember that the buildin LED is on the same pin as SCK on most boards, so you'll want to cadd LEDs on other pinn, defaults to D2
 	// On PB parts can also use second USART. Using the second SPI is not supported.
 
@@ -190,7 +190,7 @@
 
 
 #elif defined (__AVR_ATmega_Mini__) || defined(ARDUINO_AVR_LARDU_328E)
-	// For ATmega328/168/88 (P, PB) and ATmega8 parts
+	// For ATmega8/88/168/328 (P, PB) parts
 
 
 	#	ifndef UPDI_PORT
@@ -283,7 +283,7 @@
 	#warning "Part not supported - if you didn't provide all the needed pin definitions, that's why it's not compiling"
 #endif //End of the defaults!
 
-// The ATmega8/16 has no 0 after the UART register names
+// The ATmega8/16/32 don't have a 0 after the UART register names
 #ifndef XAVR
 	#ifndef UDRE0
 		#define UDRE0 UDRE
@@ -315,9 +315,9 @@
 	#ifndef UDR0
 		#define UDR0 UDR
 	#endif
-    #ifndef TIFR1
-	    #define TIFR1 TIFR
-    #endif
+	#ifndef TIFR1
+		#define TIFR1 TIFR
+	#endif
 #endif
 
 
